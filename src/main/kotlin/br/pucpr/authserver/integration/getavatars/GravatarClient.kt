@@ -2,8 +2,8 @@ package br.pucpr.authserver.integration.getavatars
 
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
-import java.security.MessageDigest
 import java.nio.charset.StandardCharsets
+import java.security.MessageDigest
 import java.util.*
 
 
@@ -23,7 +23,7 @@ class GravatarClient {
     fun gravatarUrl(email: String, size: Int = 200): String {
         val emailHash = hash(email.trim().lowercase(Locale.getDefault()))
         log.info("emailHash ${emailHash}")
-        return "$URL_GRAVATAR$emailHash?s=$size"
+        return "$URL_GRAVATAR$emailHash?s=$size&d=404"
     }
 
     companion object{
